@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introvert's Club Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #6a4aa5, #2ebf91);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 320px;
+    }
+
+    .login-container h1 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    .login-container input[type="text"]:focus,
+    .login-container input[type="password"]:focus {
+      border-color: #11771b;
+      outline: none;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #156b0e;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-container button:hover {
+      background-color: #249d7d;
+    }
+
+    #error-message {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head> 
+<body> 
+  <div class="login-container"> 
+    <form id="loginForm"> 
+      <h1> Welcome to the Introvert's Club</h1>
+      
+      <label for="username">Username</label> 
+      <input type="text" placeholder="introverts" value="introverts" id="username" required>
+      
+      <label for="password">Password</label> 
+      <input type="password" placeholder="password123" value="password123" id="password" required>
+      
+      <button type="submit">Login</button>
+       
+      <div id="error-message"></div>
+    </form> 
+    <p class="small-text">Shhh... The outside world can't get in here😶</p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    // Simple validation for demo purposes
+    if (username === "introverts" && password === "password123") {
+    
+        errorMessage.textContent = " ";  // Clear any previous error messages
+        
+        window.location.href = "one.html";  // Redirect to quiz page
+    } else {
+        errorMessage.textContent = "Invalid username or password.";
+    }
+});
+  </script> 
+</body>
+</html>

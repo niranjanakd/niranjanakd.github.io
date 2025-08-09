@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome to Mayavi's Comfort Zone</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #056017 0%, #661496 100%);
+    color: #fff;
+    line-height: 1.6;
+  }
+  a {
+    color: #f0c674;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Header & Nav */
+  header {
+    background: rgba(0,0,0,0.25);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+  }
+  nav a:hover {
+    background: #f0c674;
+    color: #333;
+  }
+
+  /* Sections */
+  section {
+    margin: 4rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    color: #f0c674;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 1rem auto 0 auto;
+    font-size: 1.1rem;
+    color: #eee;
+  }
+
+  /* Moto Section */
+  .moto {
+    font-style: italic;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem auto 0 auto;
+    max-width: 600px;
+    color: #ffd966;
+  }
+
+  /* Join Community */
+  .join-section {
+    text-align: center;
+  }
+  .join-btn {
+    background: #f0c674;
+    color: #333;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(240,198,116,0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .join-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(240,198,116,0.9);
+  }
+
+  /* Mayavi highlight */
+  .highlight {
+    font-weight: 700;
+    color: #ffd966;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    .join-btn {
+      width: 80%;
+      font-size: 1.1rem;
+      padding: 1rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#moto">Moto</a>
+    <a href="#vision">Vision</a>
+    <a href="#join">Join Community</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section id="about">
+    <h1>Welcome to Nope Zone</h1>
+    <p>
+      Introversion is a beautiful personality trait where individuals feel most energized and comfortable in quieter, less stimulating environments. However, introverts often face unique social challenges such as anxiety, difficulty initiating conversations, and feeling overwhelmed in large groups.
+    </p>
+    <p>
+      That’s why we created <span class="highlight">Mayavi</span> — a friendly AI chatbot companion designed to understand your needs, offer support, and guide you in overcoming social anxiety, one gentle step at a time. Think of Mayavi as your social coach, always there to help you grow without pressure.
+    </p>
+  </section>
+
+  <section id="moto" class="moto">
+    <h2>Our Moto</h2>
+    <p>“Empowering introverts to thrive by creating safe spaces for growth and connection.”</p>
+  </section>
+
+  <section id="vision">
+    <h2>Our Vision</h2>
+    <p>
+      We envision a world where introverts can have their comfort zones while effectively solving their daily social challenges and overcoming anxiety. Through empathetic technology and community support, introverts can develop confidence and meaningful connections without sacrificing their peace.
+    </p>
+  </section>
+
+  <section id="join" class="join-section">
+    <h2>Join Our Community</h2>
+    <p>
+      Connect with fellow introverts, share experiences, support each other, and access tools like Mayavi to navigate your social journey with confidence and ease.
+    </p>
+    <button class="join-btn" onclick="joinCommunity()">Join Now</button>
+  </section>
+</div>
+ 
+<script> 
+  // Smooth scroll for nav links
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetId);
+      if(targetSection){
+        targetSection.scrollIntoView({behavior: 'smooth'});
+      }
+    });
+  });
+
+  function joinCommunity() {
+    // Here you can redirect to your signup/login page or platform
+    window.location.href = "two.html";
+   //alert("Welcome to the community!  You will now be redirected to the signup page.");
+      // uncomment and set correct path
+  }
+</script>
+
+</body>
+</html>
